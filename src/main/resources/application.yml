@@ -15,7 +15,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
@@ -36,4 +36,4 @@ logging:
 
 parking:
   amountOfSlots: 500
-  init: false
+  init: true
