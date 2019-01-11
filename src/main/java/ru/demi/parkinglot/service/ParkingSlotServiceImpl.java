@@ -11,15 +11,12 @@ import ru.demi.parkinglot.repository.ParkingSlotRepository;
 import java.util.Date;
 import java.util.Optional;
 
-import static org.springframework.transaction.annotation.Isolation.REPEATABLE_READ;
-
+@Transactional
 @Service
 @RequiredArgsConstructor
 public class ParkingSlotServiceImpl implements ParkingSlotService {
     private final ParkingSlotRepository parkingSlotRepository;
 
-    // TODO find out about nested transactions
-    @Transactional(isolation = REPEATABLE_READ)
     @Override
     public int occupyNextFreeParkingSlot() {
         Optional<ParkingSlot> optional = parkingSlotRepository.findFirstByIsAvailableTrueOrderByNumberAsc();

@@ -2,14 +2,14 @@ package ru.demi.parkinglot.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.demi.parkinglot.dto.TicketDto;
 import ru.demi.parkinglot.entity.Ticket;
 
-import javax.transaction.Transactional;
 import java.util.Date;
 
-@Service
 @Transactional
+@Service
 @RequiredArgsConstructor
 public class ParkingServiceImpl implements ParkingService {
     private final ParkingSlotService parkingSlotService;
