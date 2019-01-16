@@ -37,3 +37,9 @@ logging:
 parking:
   amountOfSlots: 500
   init: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
